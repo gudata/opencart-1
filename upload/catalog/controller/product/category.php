@@ -67,9 +67,9 @@ class Category extends \Opencart\System\Engine\Controller {
 			return new \Opencart\System\Engine\Action('error/not_found');
 		}
 
-		$this->document->setTitle($category_info['meta_title']);
-		$this->document->setDescription($category_info['meta_description']);
-		$this->document->setKeywords($category_info['meta_keyword']);
+		$this->document->setTitle($category_info['meta_title'] ?? '');
+		$this->document->setDescription($category_info['meta_description'] ?? '');
+		$this->document->setKeywords($category_info['meta_keyword'] ?? '');
 
 		$this->document->addScript('view/javascript/catalog/category.js');
 
